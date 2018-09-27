@@ -1,4 +1,4 @@
-# -*- coding: latin-1 -*-
+# -*- coding: utf-8 -*-
 """This file contains the public interface to the aiml module."""
 
 from __future__ import print_function
@@ -353,7 +353,7 @@ class Kernel:
         try: input_ = self._cod.dec(input_)
         except UnicodeError: pass
         except AttributeError: pass
-        
+
         # prevent other threads from stomping all over us.
         self._respondLock.acquire()
 

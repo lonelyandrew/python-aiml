@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0"> 
+<meta name="author" content="Shi XiuFeng"/>
+<meta name="language" content="zh-cn"/>
+
+<category>
+    <pattern>QUERY TOPIC</pattern>
+    <template>
+        <get name="topic"></get>
+    </template>
+</category>
+
+<category>
+    <pattern>QUERY ACTION</pattern>
+    <template>
+        <get name="action"></get>
+    </template>
+</category>
+
+<category>
+    <pattern>QUERY NTURN</pattern>
+    <template>
+        <get name="nturn"></get>
+    </template>
+</category>
+
+</aiml>

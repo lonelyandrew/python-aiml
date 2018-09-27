@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0"> 
+<meta name="author" content="Shi XiuFeng"/>
+<meta name="language" content="zh-cn"/>
+
+<topic name='PRICE'>
+    <category>
+        <pattern>FEEDBACK PRICE POSITIVE</pattern>
+        <template>
+            ACTION LOCATION INTRO
+        </template>
+    </category>
+
+    <category>
+        <pattern>FEEDBACK PRICE NEGATIVE</pattern>
+        <template>
+            <condition name='PRICE REDEEM'>
+                <li value='2'>ACTION PRICE STOP</li>
+                <li value='1'>
+                    <think><set name='PRICE REDEEM'>2</set></think>
+                    ACTION PRICE REDEEM
+                </li>
+                <li>
+                    <think><set name='PRICE REDEEM'>1</set></think>
+                    ACTION PRICE REDEEM
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACTION PRICE INTRO</pattern>
+        <template>现在我们这个价格很实惠的，像小户型的29平米的总价最便宜的一套也就在32-3万，首付17万就可以买到！所以性价比是最高的，您有兴趣了解一下吗？</template>
+    </category>
+
+    <category>
+        <pattern>ACTION PRICE REDEEM</pattern>
+        <template>
+            <condition name='PRICE REDEEM'>
+                <li value='1'>您可以做个小投资嘛，现在租金的话每月就2500元--2800以上.一年下来也有近3万以上的收益了、这个价位您买到就是赚到！</li>
+                <li value='2'>我们项目以29平总价只要33万多的小户型为主，很适合居住和投资</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACTION PRICE STOP</pattern>
+        <template>那打扰您了，再见!</template>
+    </category>
+</topic>
+</aiml>

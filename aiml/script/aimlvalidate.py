@@ -97,7 +97,7 @@ def main():
                     err.getMessage(), row, col, err.getSystemId(), 
                     errbuf, below )
                 print( "\n  FATAL ERROR: %s\n" % msg )
-                
+
     # Print final results
     print( "%d out of %d documents are AIML 1.0.1 compliant." % (validCount, docCount))
     if docCount == validCount:

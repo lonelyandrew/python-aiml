@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0"> 
+<meta name="author" content="Shi XiuFeng"/>
+<meta name="language" content="zh-cn"/>
+
+<topic name='GREET'>
+    <category>
+        <pattern>FEEDBACK GREET POSITIVE</pattern>
+        <template>
+            ACTION PRICE INTRO
+        </template>
+    </category>
+
+    <category>
+        <pattern>FEEDBACK GREET NEGATIVE</pattern>
+        <template>
+            <condition name='GREET REDEEM'>
+                <li value='1'>ACTION GREET STOP</li>
+                <li>
+                    <think><set name='GREET REDEEM'>1</set></think>
+                    ACTION GREET REDEEM
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ACTION GREET INTRO</pattern>
+        <template>您好，苏州平江区万达广场对面的总价33万的公寓您有没有兴趣买套投资一下？</template>
+    </category>
+
+    <category>
+        <pattern>ACTION GREET REDEEM</pattern>
+        <template>我们这边最低首付才17万，您可以先做个了解的嘛？</template>
+    </category>
+
+    <category>
+        <pattern>ACTION GREET STOP</pattern>
+        <template>好的打扰了，再见！</template>
+    </category>
+</topic>
+
+<topic name='PRICE'>
+    <category>
+        <pattern>ACTION PRICE INTRO</pattern>
+        <template>现在我们这个价格很实惠的，像小户型的29平米的总价最便宜的一套也就在32-3万，首付17万就可以买到！所以性价比是最高的，您有兴趣了解一下吗？</template>
+    </category>
+</topic>
+</aiml>

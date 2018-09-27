@@ -37,7 +37,7 @@ def read_args():
     g2 = parser.add_argument_group( 'Options' )
     g2.add_argument( '--chdir', metavar='DIRECTORY',
                      help='Directory to change to before loading AIML files' )
-    g2.add_argument( '--commands', '-c', metavar='COMMAND', nargs='+',  
+    g2.add_argument( '--commands', '-c', metavar='COMMAND', nargs='+',
                      default=[],
                      help='Optional command(s) to send to kernel after data loading' )
 
@@ -66,6 +66,7 @@ def main():
     # The optional brainFile argument specifies a brain file to load.
     if args.standard:
         chdir = os.path.join( aiml.__path__[0],'botdata','standard' )
+        print(aiml.__path__)
         kern.bootstrap(learnFiles="startup.xml", commands="load aiml b",
                        chdir=chdir)
     elif args.alice:
